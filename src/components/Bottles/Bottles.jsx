@@ -51,6 +51,17 @@ const Bottles = () => {
         removeFromLS(id);
     }
 
+    // not working properly
+    // const handleRemoveFromCart = index => {
+    //     // visual cart remove
+    //     let remainingCart = cart;
+    //     remainingCart.splice(index, 1);
+    //     console.log("remaining cart", remainingCart);
+    //     setCart(remainingCart);
+    //     // remove from LS 
+    //     removeFromLS(index);
+    // }
+
     return (
         <div>
             <h2>Bottles Available: {bottles.length}</h2>
