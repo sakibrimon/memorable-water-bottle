@@ -6,13 +6,9 @@ const Cart = ({cart, handleRemoveFromCart}) => {
         <div>
             <h4>Cart: {cart.length}</h4>
             <div className="cart-container">
-                {/* {cart.map(bottle=> <div  key={bottle.id}> */}
                 {cart.map((bottle, index) => <div key={bottle.id+`${index}`}>
                     <img src={bottle.img}></img>
-                    <button onClick={() => handleRemoveFromCart(bottle.id)}>Remove</button>
-                    
-                    {/* not working properly */}
-                    {/* <button onClick={() => handleRemoveFromCart(index)}>Remove {index}</button> */}
+                    <button onClick={() => handleRemoveFromCart(index)}>Remove {index}</button>
                 </div>)}
             </div>
         </div>

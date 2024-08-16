@@ -43,24 +43,15 @@ const Bottles = () => {
         addToLS(bottle.id);
     }
 
-    const handleRemoveFromCart = id => {
+    const handleRemoveFromCart = index => {
         // visual cart remove
-        const remainingCart = cart.filter(bottle => bottle.id !== id);
+        let remainingCart = [...cart];
+        remainingCart.splice(index, 1);
+        console.log("remaining cart", remainingCart);
         setCart(remainingCart);
         // remove from LS 
-        removeFromLS(id);
+        removeFromLS(index);
     }
-
-    // not working properly
-    // const handleRemoveFromCart = index => {
-    //     // visual cart remove
-    //     let remainingCart = cart;
-    //     remainingCart.splice(index, 1);
-    //     console.log("remaining cart", remainingCart);
-    //     setCart(remainingCart);
-    //     // remove from LS 
-    //     removeFromLS(index);
-    // }
 
     return (
         <div>

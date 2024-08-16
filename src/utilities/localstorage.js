@@ -18,19 +18,11 @@ const addToLS = id => {
     saveCartToLS(cart);
 }
 
-const removeFromLS = id => {
+const removeFromLS = index => {
     const cart = getStoredCart();
     // removing every id
-    const remaining = cart.filter(idx => idx !== id);
-    saveCartToLS(remaining);
+    cart.splice(index, 1);
+    saveCartToLS(cart);
 }
-
-// not working properly
-// const removeFromLS = index => {
-//     const cart = getStoredCart();
-//     // removing every id
-//     cart.splice(index, 1);
-//     saveCartToLS(cart);
-// }
 
 export { addToLS, getStoredCart, removeFromLS }
